@@ -3,19 +3,21 @@
 {% block content %}
 
 {% if visi_irasai %}
-{% for irasas in visi_irasai %}
+<h5 class="text-center">Game history:</h5>
+    {% for irasas in visi_irasai %}
+        <hr>
+        {% if irasas.laimejo == 1%}
+        <h5 class="text-center">Win</h5>
+        <p class="text-center">{{ datetime.strftime(irasas.data, "%Y-%m-%d %H:%M:%S")}}</p>
+        {% else %}
+        <h5 class="text-center">Defeat</h5>
+        <p class="text-center">{{ datetime.strftime(irasas.data, "%Y-%m-%d %H:%M:%S")}}</p>
+        {% endif %}
+    {% endfor %}
 <hr>
-{% if irasas.laimejo == 1%}
-<p>Data: {{ datetime.strftime(irasas.data, "%Y-%m-%d %H:%M:%S")}}</p>
-<p>Win</p>
 {% else %}
-<p>Data: {{ datetime.strftime(irasas.data, "%Y-%m-%d %H:%M:%S")}}</p>
-<p>Defeat</p>
+<h5 class="text-center">Game history is empty</h5>
 {% endif %}
-{% endfor %}
-<hr>
-{% endif %}
-
 
 
 {% endblock %}

@@ -239,7 +239,7 @@ def my_function():
             win = Irasas(laimejo=False, pralaimejo=True, vartotojas_id=current_user.id)
             db.session.add(win)
             db.session.commit()
-            flash(f"Statistics updatedsss", 'success')
+            flash(f"Statistics updated", 'success')
             return render_template('lost.html', data = file, answer = "Game Over. Try again.")
     
 

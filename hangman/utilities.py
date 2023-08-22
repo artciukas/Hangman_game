@@ -4,10 +4,59 @@ import random
 # from database_crud import get_all_words
 
 
-word_database = ['table', 'watermelon', 'lemon', 'apple']
+word_database = ['Apple', 
+                 'Apricot', 
+                 'Avocado', 
+                 'Banana', 
+                 'Blackberry', 
+                 'Cherry',
+                 'Coconut',
+                 'Cucumber',
+                 'Durian',
+                 'Dragonfruit',
+                 'Fig',
+                 'Gooseberry',
+                 'Guava',
+                 'Jackfruit',
+                 'Plum',
+                 'Kiwifruit',
+                 'Kumquat',
+                 'Lemon',
+                 'Lime',
+                 'Mango',
+                 'Watermelon',
+                 'Mulberry',
+                 'Orange',
+                 'Papaya',
+                 'Passionfruit',
+                 'Peach',
+                 'Pear',
+                 'Persimmon',
+                 'Pineapple',
+                 'Pineberry',
+                 'Quince',
+                 'Raspberry',
+                 'Soursop',
+                 'Strawberry',
+                 'Tamarind',
+                 'Yuzu'
+                 ]
 unused_letters_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 guessed_letters = []
 lives = 7
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def get_random_word(word_database: list) -> str: 
     random_word = random.choice(word_database)

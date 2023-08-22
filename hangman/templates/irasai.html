@@ -5,19 +5,17 @@
 {% if visi_irasai %}
 {% for irasas in visi_irasai %}
 <hr>
-{% if irasas.pajamos %}
-<p>Pajamos: {{irasas.suma}}</p>
+{% if irasas.laimejo == 1%}
 <p>Data: {{ datetime.strftime(irasas.data, "%Y-%m-%d %H:%M:%S")}}</p>
+<p>Win</p>
 {% else %}
-<p>Išlaidos: {{irasas.suma}}</p>
 <p>Data: {{ datetime.strftime(irasas.data, "%Y-%m-%d %H:%M:%S")}}</p>
+<p>Defeat</p>
 {% endif %}
-<a href="#">Ištrinti</a>
-<a href="#">Redaguoti</a>
 {% endfor %}
 <hr>
 {% endif %}
 
-<p><a href="{{ url_for('new_record')}}">Naujas įrašas</a></p>
+
 
 {% endblock %}

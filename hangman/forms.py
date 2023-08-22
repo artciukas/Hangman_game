@@ -52,7 +52,7 @@ class PaskyrosAtnaujinimoForma(FlaskForm):
     #             raise ValidationError('Šis el. pašto adresas panaudotas. Pasirinkite kitą.')
             
             
-# class IrasasForm(FlaskForm):
-#     pajamos = BooleanField('Pajamos')
-#     suma = FloatField('Suma', [DataRequired()])
-#     submit = SubmitField('Įvesti')
+class IrasasForm(FlaskForm):
+    pajamos = BooleanField('Win')
+    suma = FloatField('Defeat', [DataRequired()])
+    submit = SubmitField('Įvesti')

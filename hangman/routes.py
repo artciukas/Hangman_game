@@ -1,11 +1,12 @@
 import os
 from flask import render_template, redirect, url_for, flash, request, session
 from flask_login import current_user, logout_user, login_user, login_required
+from datetime import datetime
 
 
 from hangman import app, db, bcrypt
-from hangman.forms import RegistracijosForma, PrisijungimoForma, PaskyrosAtnaujinimoForma
-from hangman.models import Vartotojas
+from hangman.forms import RegistracijosForma, PrisijungimoForma, PaskyrosAtnaujinimoForma, IrasasForm
+from hangman.models import Vartotojas, Irasas
 from hangman.photo_save import save_picture
 
 from hangman.utilities import get_random_word,word_database,display_word,display_all_letters
@@ -64,6 +65,7 @@ def index():
 
 @app.route("/start")
 def start():
+    start_game()
     return render_template("start.html")
 
 
@@ -96,37 +98,24 @@ def paskyra():
 #     db.create_all()
 #     forma = hangman.forms.IrasasForm()
 #     if forma.validate_on_submit():
-#         naujas_irasas = hangman.Irasas(pajamos=forma.pajamos.data, suma=forma.suma.data, vartotojas_id=current_user.id)
+#         naujas_irasas = Irasas(pajamos=forma.pajamos.data, suma=forma.suma.data, vartotojas_id=current_user.id)
 #         db.session.add(naujas_irasas)
 #         db.session.commit()
 #         flash(f"Įrašas sukurtas", 'success')
 #         return redirect(url_for('records'))
 #     return render_template("prideti_irasa.html", form=forma)
 
-# @app.route("/irasai")
-# @login_required
-# def records():
-#     db.create_all()
-#     try:
-#         visi_irasai = hangman.Irasas.query.filter_by(vartotojas_id=current_user.id).all()
-#     except:
-#         visi_irasai = []
-#     print(visi_irasai)
-#     return render_template("irasai.html", visi_irasai=visi_irasai, datetime=datetime)
+@app.route("/irasai")
+@login_required
+def records():
+    db.create_all()
+    try:
+        visi_irasai = Irasas.query.filter_by(vartotojas_id=current_user.id).all()
+    except:
+        visi_irasai = []
+    print(visi_irasai)
+    return render_template("irasai.html", visi_irasai=visi_irasai, datetime=datetime)
 
-
-
-guessed_letters = []
-random_word = get_random_word(word_database)
-unused_letters_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-not_correct_answers = []
-
-# class HangmanRestart:
-#     def __init__(self) -> None:
-#         self.guessed_letters = []
-#         self.random_word = get_random_word(word_database)
-#         self.unused_letters_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-#         self.not_correct_answers = []
 
 def start_game():
     random_word = get_random_word(word_database)
@@ -200,6 +189,17 @@ def my_function():
                 if "_" not in hiden_word:
                     file = os.path.join(img, 'heaven.jpg')
                     answer = f"Congratulations! You guessed the word: {random_word}"
+
+
+                    db.create_all()
+                    
+                    win = Irasas(laimejo=True, pralaimejo=False, vartotojas_id=current_user.id)
+                    db.session.add(win)
+                    db.session.commit()
+                    flash(f"Statistics updated", 'success')
+
+
+
                     return render_template('win.html', data = file, answer = answer)
                 
     # IF USER GUESS RIGHT LETTER
@@ -223,6 +223,8 @@ def my_function():
                     print(f"picture image: {file}")
                     print(f"No correct letters list: {not_correct_answers}")
                     print(lives)
+                    
+                    
                     return render_template('game.html', data = file, random_word = random_word, hiden_word = hiden_word, answer = answer, display_unused_letters_list = display_unused_letters_list)
     
     # IF USER INPUT NOT SINGLE LETTER
@@ -230,8 +232,15 @@ def my_function():
                 answer ='Please enter single letter!'
                 display_unused_letters_list = display_all_letters(unused_letters_list)
                 return render_template('game.html', data = file, random_word = random_word, hiden_word = hiden_word, answer = answer, display_unused_letters_list = display_unused_letters_list)
-        file = os.path.join(img, 'hell.jpg')
-        return render_template('lost.html', data = file, answer = "Game Over. Try again.")
+        else:
+            file = os.path.join(img, 'hell.jpg')
+            db.create_all()
+                        
+            win = Irasas(laimejo=False, pralaimejo=True, vartotojas_id=current_user.id)
+            db.session.add(win)
+            db.session.commit()
+            flash(f"Statistics updatedsss", 'success')
+            return render_template('lost.html', data = file, answer = "Game Over. Try again.")
     
 
 @app.route('/restart')

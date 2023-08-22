@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block game %}
+
+
+<h1 class="text-center my-3 pb-3">Welcome to hangman game</h1>
+<hr>
+<img class="rounded mx-auto d-block" src="{{data}}">
+<h4 class="text-center my-3 pb-3">Question: {{hiden_word}} </h4>
+<h4 class="text-center my-3 pb-3">{{answer}} </h4>
+<hr>
+<h4 class="text-center my-3 pb-3">{{display_unused_letters_list }}</h4>
+<hr>
+
+            <form class="form-inline justify-content-center" action="/game" method="post">
+              <div class="col-4">
+                <div class="form-outline">
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Enter a single letter"/>
+                </div>
+              </div>
+ 
+              <div class="col-6">
+                <button type="submit" class="btn btn-primary">Enter</button>
+              </div>
+            </form>
+            <p></p>
+            <p></p>
+            <a href="/restart"><button class="btn btn-primary">Give Up</button></a>
+
+      
+
+           
+
+            
+{% endblock %}

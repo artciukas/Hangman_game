@@ -5,23 +5,23 @@ from datetime import datetime
 from hangman import db, app
 
 
-class Vartotojas(db.Model, UserMixin):
-    __tablename__ = "vartotojas"
+class User(db.Model, UserMixin):
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
-    vardas = db.Column("Name", db.String(20), unique=True, nullable=False)
-    el_pastas = db.Column("Email", db.String(120), unique=True, nullable=False)
-    nuotrauka = db.Column(db.String(20), nullable=False, default='default.jpg')
-    slaptazodis = db.Column("Password", db.String(60), unique=True, nullable=False)
+    name = db.Column("Name", db.String(20), unique=True, nullable=False)
+    email = db.Column("Email", db.String(120), unique=True, nullable=False)
+    photo = db.Column(db.String(20), nullable=False, default='default.jpg')
+    password = db.Column("Password", db.String(60), unique=True, nullable=False)
 
 
-class Irasas(db.Model):
-    __tablename__ = "irasas"
+class Statistics(db.Model):
+    __tablename__ = "statistics"
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column("Date", DateTime, default=datetime.now())
-    laimejo = db.Column("Win", db.Integer)
-    pralaimejo = db.Column("Defeat", db.Integer)
-    vartotojas_id = db.Column(db.Integer, db.ForeignKey("vartotojas.id"))
-    vartotojas = db.relationship("Vartotojas", lazy=True)
+    wins = db.Column("Win", db.Integer)
+    defeats = db.Column("Defeat", db.Integer)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    user = db.relationship("User", lazy=True)
 
 with app.app_context():
     db.create_all()

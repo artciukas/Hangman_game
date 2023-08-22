@@ -2,16 +2,16 @@
 
 {% block content %}
 
-{% if visi_irasai %}
+{% if all_statistic %}
 <h5 class="text-center">Game history:</h5>
-    {% for irasas in visi_irasai %}
+    {% for statistics in all_statistic %}
         <hr>
-        {% if irasas.laimejo == 1%}
+        {% if statistics.wins == 1%}
         <h5 class="text-center">Win</h5>
-        <p class="text-center">{{ datetime.strftime(irasas.data, "%Y-%m-%d %H:%M:%S")}}</p>
+        <p class="text-center">{{ datetime.strftime(statistics.data, "%Y-%m-%d %H:%M:%S")}}</p>
         {% else %}
         <h5 class="text-center">Defeat</h5>
-        <p class="text-center">{{ datetime.strftime(irasas.data, "%Y-%m-%d %H:%M:%S")}}</p>
+        <p class="text-center">{{ datetime.strftime(statistics.data, "%Y-%m-%d %H:%M:%S")}}</p>
         {% endif %}
     {% endfor %}
 <hr>

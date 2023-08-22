@@ -2,57 +2,57 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import SubmitField, BooleanField, StringField, PasswordField, FloatField
 from wtforms.validators import DataRequired, ValidationError, EqualTo
-from hangman.models import Vartotojas
+from hangman.models import User
 
 
 
-class RegistracijosForma(FlaskForm):
-    vardas = StringField('Name', [DataRequired()])
-    el_pastas = StringField('Email', [DataRequired()])
-    slaptazodis = PasswordField('Password', [DataRequired()])
-    patvirtintas_slaptazodis = PasswordField("Repeat password", [EqualTo('slaptazodis', "The password must match.")])
+class RegisterForm(FlaskForm):
+    name = StringField('Name', [DataRequired()])
+    email = StringField('Email', [DataRequired()])
+    password = PasswordField('Password', [DataRequired()])
+    verified_password = PasswordField("Repeat password", [EqualTo('password', "The password must match.")])
     submit = SubmitField('Login')
 
-    def validate_vardas(self, vardas):
-        vartotojas = Vartotojas.query.filter_by(vardas=vardas.data).first()
-        if vartotojas:
+    def validate_name(self, name):
+        user = User.query.filter_by(name=name.data).first()
+        if user:
             raise ValidationError('This name has been used. Choose another.')
 
-    def validate_el_pastas(self, el_pastas):
-        vartotojas = Vartotojas.query.filter_by(el_pastas=el_pastas.data).first()
-        if vartotojas:
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user:
             raise ValidationError('This email has been used. Choose another.')
 
 
 
 
-class PrisijungimoForma(FlaskForm):
-    el_pastas = StringField('Email', [DataRequired()])
-    slaptazodis = PasswordField('Password', [DataRequired()])
-    prisiminti = BooleanField("Remember me")
+class LoginForm(FlaskForm):
+    email = StringField('Email', [DataRequired()])
+    password = PasswordField('Password', [DataRequired()])
+    remember = BooleanField("Remember me")
     submit = SubmitField('Login')
 
 
 class PaskyrosAtnaujinimoForma(FlaskForm):
-    vardas = StringField('Name', [DataRequired()])
-    el_pastas = StringField('Email', [DataRequired()])
-    nuotrauka = FileField('Update profile picture', validators=[FileAllowed(['jpg', 'png'])])
+    name = StringField('Name', [DataRequired()])
+    email = StringField('Email', [DataRequired()])
+    photo = FileField('Update profile picture', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Update')
 
-    # def validate_vardas(self, vardas):
-    #     if vardas.data != app.current_user.vardas:
-    #         vartotojas = app.db.session.query(Vartotojas).filter_by(vardas=vardas.data).first()
-    #         if vartotojas:
-    #             raise ValidationError('Šis vardas panaudotas. Pasirinkite kitą.')
+    # def validate_name(self, name):
+    #     if name.data != app.current_user.name:
+    #         user = app.db.session.query(User).filter_by(name=name.data).first()
+    #         if user:
+    #             raise ValidationError('Šis name panaudotas. Pasirinkite kitą.')
 
-    # def validate_el_pastas(self, el_pastas):
-    #     if el_pastas.data != app.current_user.el_pastas:
-    #         vartotojas = app.db.session.query(Vartotojas).filter_by(el_pastas=el_pastas.data).first()
-    #         if vartotojas:
+    # def validate_email(self, email):
+    #     if email.data != app.current_user.email:
+    #         user = app.db.session.query(User).filter_by(email=email.data).first()
+    #         if user:
     #             raise ValidationError('Šis el. pašto adresas panaudotas. Pasirinkite kitą.')
             
             
-class IrasasForm(FlaskForm):
+class StatisticsForm(FlaskForm):
     pajamos = BooleanField('Win')
     suma = FloatField('Defeat', [DataRequired()])
     submit = SubmitField('Įvesti')

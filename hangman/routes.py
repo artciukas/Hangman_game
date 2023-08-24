@@ -5,15 +5,11 @@ from datetime import datetime
 
 
 from hangman import app, db, bcrypt, logging
-from hangman.forms import RegisterForm, LoginForm, PaskyrosAtnaujinimoForma
+from hangman.forms import RegisterForm, LoginForm, AccountUpdateForm
 from hangman.models import User, Statistics
 from hangman.photo_save import save_picture
 
 from hangman.utilities import get_random_word,word_database,display_word,display_all_letters
-
-
-
-
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -74,7 +70,7 @@ def start():
 @app.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
-    form = PaskyrosAtnaujinimoForma()
+    form = AccountUpdateForm()
     
     if form.validate_on_submit():
         if form.photo.data:
@@ -91,19 +87,6 @@ def account():
     photo = url_for('static', filename='profilio_nuotraukos/' + current_user.photo)
     return render_template('account.html', title='Account', form=form, photo=photo)
 
-
-# @app.route("/naujas_statistics", methods=["GET", "POST"])
-# @login_required
-# def new_record():
-#     db.create_all()
-#     forma = hangman.forms.StatisticsForm()
-#     if forma.validate_on_submit():
-#         naujas_irasas = Statistics(pajamos=forma.pajamos.data, suma=forma.suma.data, user_id=current_user.id)
-#         db.session.add(naujas_irasas)
-#         db.session.commit()
-#         flash(f"Įrašas sukurtas", 'success')
-#         return redirect(url_for('records'))
-#     return render_template("prideti_irasa.html", form=forma)
 
 @app.route("/statistic")
 @login_required
@@ -127,7 +110,7 @@ def start_game():
 
 @app.route('/game', methods=['GET', 'POST'])
 @login_required
-def my_function():
+def game_route():
     
     guessed_letters = session['guessed_letters']
     random_word = session['random_word']
@@ -256,7 +239,7 @@ def my_function():
 @app.route('/restart')
 def restart():
     start_game()
-    return redirect(url_for('my_function'))
+    return redirect(url_for('game_route'))
 
 
 if __name__ == '__main__':

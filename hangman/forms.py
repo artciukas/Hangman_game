@@ -33,7 +33,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 
-class PaskyrosAtnaujinimoForma(FlaskForm):
+class AccountUpdateForm(FlaskForm):
     name = StringField('Name', [DataRequired()])
     email = StringField('Email', [DataRequired()])
     photo = FileField('Update profile picture', validators=[FileAllowed(['jpg', 'png'])])

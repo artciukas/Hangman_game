@@ -37,9 +37,6 @@ word_database = ['Apple',
                  'Tamarind',
                  'Yuzu'
                  ]
-# unused_letters_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-# guessed_letters = []
-# lives = 7
 
 
 def get_random_word(word_database: list) -> str: 
@@ -61,13 +58,10 @@ def display_word(word: str, guessed_letters: list) -> str:
 def get_random_word_length(random_word: str) -> str:
     return f'The word is {len(random_word)} letters length'
 
+
 def display_all_letters(unused_letters_list: list) -> str:
     joined_unused_letters_list = ' '.join(unused_letters_list)
     return joined_unused_letters_list
-
-
-
-
 
 if __name__ == '__main__':
     pass

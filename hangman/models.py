@@ -23,5 +23,9 @@ class Statistics(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     user = db.relationship("User", lazy=True)
 
+    def __repr__(self) -> str:
+        return f'{self.id}, {self.data}, {self.wins}, {self.defeats}'
+
+
 with app.app_context():
     db.create_all()

@@ -24,8 +24,6 @@ class RegisterForm(FlaskForm):
             raise ValidationError('This email has been used. Choose another.')
 
 
-
-
 class LoginForm(FlaskForm):
     email = StringField('Email', [DataRequired()])
     password = PasswordField('Password', [DataRequired()])
@@ -52,7 +50,7 @@ class AccountUpdateForm(FlaskForm):
     #             raise ValidationError('Šis el. pašto adresas panaudotas. Pasirinkite kitą.')
             
             
-class StatisticsForm(FlaskForm):
-    pajamos = BooleanField('Win')
-    suma = FloatField('Defeat', [DataRequired()])
-    submit = SubmitField('Įvesti')
+# class StatisticsForm(FlaskForm):
+#     pajamos = BooleanField('Win')
+#     suma = FloatField('Defeat', [DataRequired()])
+#     submit = SubmitField('Įvesti')

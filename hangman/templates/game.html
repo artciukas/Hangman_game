@@ -3,9 +3,10 @@
 {% block game %}
 
 
-<h1 class="text-center my-3 pb-3">Welcome to hangman game</h1>
+<h3 class="text-center my-3 pb-3">Welcome {{current_user.name.capitalize()}} to hangman game</h3>
 <hr>
 <img class="rounded mx-auto d-block" src="{{data}}">
+<p class="text-center my-3 pb-3">Hint: fruits</p>
 <h4 class="text-center my-3 pb-3">Question: {{hiden_word}} </h4>
 <h4 class="text-center my-3 pb-3">{{answer}} </h4>
 <hr>

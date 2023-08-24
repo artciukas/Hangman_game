@@ -7,7 +7,6 @@ from hangman import db
 from hangman.models import User, Statistics
 
 
-
 class ManoModelView(ModelView):
     def is_accessible(self):
         print(current_user)

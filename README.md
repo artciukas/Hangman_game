@@ -1,5 +1,9 @@
 # Hangman_game
 
+Clone code:
+```
+git@github.com:artciukas/Hangman_game.git
+```
 Docker run:
 1) To create docker image run: docker build -f Dockerfile -t "image name" .
 2) Container run: docker run "container ID"
@@ -11,3 +15,6 @@ Local run:
 2) Install all libraries: pip install -r requirements.txt
 3) Enter to src directory: cd src
 4) Run file: run.py
+
+Run unittest tests:
+1) Run command: python -m unittest

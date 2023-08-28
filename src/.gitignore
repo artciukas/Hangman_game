@@ -1,5 +1,5 @@
 __pycache__
 *.sqlite
-.venv
+*.venv
 *.db
 loging_data.log

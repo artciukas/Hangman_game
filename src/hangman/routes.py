@@ -25,7 +25,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash('You have successfully registered! You can login.', 'success')
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
     
     return render_template('register.html', title='Register', form=form)
 
@@ -57,17 +57,15 @@ def disconnect():
 @app.route("/")
 def index():
     if current_user.is_authenticated:
-        flash('You already registered!', 'success')
+        flash('You are logged in!', 'success')
         return render_template("start.html")
-    flash('You are not registered!', 'danger')
+    flash('You are not logged in!', 'danger')
     return render_template("welcome.html")
 
 
 @app.route("/start")
 def start():
     start_game()
-    # if session['game_status'] == False:
-    #     redirect(url_for('restart'))
     
     return redirect(url_for('restart'))
 
@@ -233,7 +231,6 @@ def game_route():
 @app.route('/restart')
 def restart():
     start_game()
-    flash(f"Statistics updated", 'success')
     return redirect(url_for('game_route'))
 
 @app.route('/give_up')

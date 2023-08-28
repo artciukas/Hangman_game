@@ -9,5 +9,5 @@ Docker run:
 Local run:
 1) create virtual environment
 2) pip install -r requirements.txt
-3) cd /src
-4) run run.py
+3) enter to src directory: cd src
+4) run file: run.py

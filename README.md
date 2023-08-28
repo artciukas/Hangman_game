@@ -2,7 +2,7 @@
 
 Docker run:
 1) To create docker image run: docker build -f Dockerfile -t "image name" .
-2) Container run: docker run "container name"
+2) Container run: docker run "container ID"
 3) Get ip from container: docker inspect "container name"
 4) run browser enter inspected container ip and 8000 port.
 

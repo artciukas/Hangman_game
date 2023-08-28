@@ -366,3 +366,144 @@
 28/08/2023 16:40:03 - werkzeug - INFO - 84.15.187.116 - - [28/Aug/2023 16:40:03] "GET /game HTTP/1.1" 200 -
 28/08/2023 16:40:03 - werkzeug - INFO - 84.15.187.116 - - [28/Aug/2023 16:40:03] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
 28/08/2023 16:43:34 - werkzeug - INFO - 84.15.187.116 - - [28/Aug/2023 16:43:34] "GET /statistic HTTP/1.1" 200 -
+28/08/2023 19:42:51 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.217:8000
+28/08/2023 19:42:51 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+28/08/2023 19:42:51 - werkzeug - INFO -  * Restarting with stat
+28/08/2023 19:42:52 - werkzeug - WARNING -  * Debugger is active!
+28/08/2023 19:42:52 - werkzeug - INFO -  * Debugger PIN: 380-891-499
+28/08/2023 19:43:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:03] "GET / HTTP/1.1" 200 -
+28/08/2023 19:43:04 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:04] "[36mGET /static/img/hangman_grey_icon.png HTTP/1.1[0m" 304 -
+28/08/2023 19:43:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:07] "[32mGET /disconnect HTTP/1.1[0m" 302 -
+28/08/2023 19:43:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:07] "GET / HTTP/1.1" 200 -
+28/08/2023 19:43:19 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:19] "GET /register HTTP/1.1" 200 -
+28/08/2023 19:43:23 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:23] "GET /register HTTP/1.1" 200 -
+28/08/2023 19:43:25 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:25] "GET /register HTTP/1.1" 200 -
+28/08/2023 19:43:26 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:26] "GET / HTTP/1.1" 200 -
+28/08/2023 19:43:28 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:43:28] "GET / HTTP/1.1" 200 -
+28/08/2023 19:54:24 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:54:24] "GET /login HTTP/1.1" 200 -
+28/08/2023 19:54:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:54:31] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:54:34 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:54:34] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:54:36 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:54:36] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:54:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:54:49] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:54:52 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:54:52] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:54:55 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:54:55] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:55:03 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:03] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:55:05 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:05] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:55:07 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:07] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:55:11 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:11] "POST /login HTTP/1.1" 200 -
+28/08/2023 19:55:20 - root - INFO - reseting game data
+28/08/2023 19:55:20 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:20] "[32mPOST /login HTTP/1.1[0m" 302 -
+28/08/2023 19:55:20 - root - INFO - reseting game data
+28/08/2023 19:55:20 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:20] "[32mGET /start HTTP/1.1[0m" 302 -
+28/08/2023 19:55:20 - root - INFO - reseting game data
+28/08/2023 19:55:20 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:20] "[32mGET /restart HTTP/1.1[0m" 302 -
+28/08/2023 19:55:20 - root - INFO - True
+28/08/2023 19:55:20 - root - INFO - Answer: WATERMELON
+28/08/2023 19:55:20 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:20] "GET /game HTTP/1.1" 200 -
+28/08/2023 19:55:20 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:20] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:55:22 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:22] "GET /statistic HTTP/1.1" 200 -
+28/08/2023 19:55:25 - root - INFO - True
+28/08/2023 19:55:25 - root - INFO - Answer: WATERMELON
+28/08/2023 19:55:25 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:25] "GET /game HTTP/1.1" 200 -
+28/08/2023 19:55:25 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:25] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:55:26 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:26] "GET / HTTP/1.1" 200 -
+28/08/2023 19:55:27 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:27] "GET / HTTP/1.1" 200 -
+28/08/2023 19:55:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:31] "GET /account HTTP/1.1" 200 -
+28/08/2023 19:55:31 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:31] "GET /static/profile_pictures/92860cece4211bce.png HTTP/1.1" 200 -
+28/08/2023 19:55:32 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:32] "GET /statistic HTTP/1.1" 200 -
+28/08/2023 19:55:33 - root - INFO - True
+28/08/2023 19:55:33 - root - INFO - Answer: WATERMELON
+28/08/2023 19:55:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:33] "GET /game HTTP/1.1" 200 -
+28/08/2023 19:55:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:33] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:55:34 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:34] "GET / HTTP/1.1" 200 -
+28/08/2023 19:55:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:37] "GET / HTTP/1.1" 200 -
+28/08/2023 19:55:45 - root - INFO - True
+28/08/2023 19:55:45 - root - INFO - Answer: WATERMELON
+28/08/2023 19:55:45 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:45] "GET /game HTTP/1.1" 200 -
+28/08/2023 19:55:45 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:55:45] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:30 - root - INFO - True
+28/08/2023 19:56:30 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:30 - root - INFO - Guessed letters are: ['W']
+28/08/2023 19:56:30 - root - INFO - Question are: W _ _ _ _ _ _ _ _ _ 
+28/08/2023 19:56:30 - root - INFO - Correct. Letter W is in the word
+28/08/2023 19:56:30 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:30] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:30 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:30] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:33 - root - INFO - True
+28/08/2023 19:56:33 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:33 - root - INFO - Guessed letters are: ['W', 'A']
+28/08/2023 19:56:33 - root - INFO - Question are: W A _ _ _ _ _ _ _ _ 
+28/08/2023 19:56:33 - root - INFO - Correct. Letter A is in the word
+28/08/2023 19:56:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:33] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:33 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:33] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:35 - root - INFO - True
+28/08/2023 19:56:35 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:35 - root - INFO - Guessed letters are: ['W', 'A', 'T']
+28/08/2023 19:56:35 - root - INFO - Question are: W A T _ _ _ _ _ _ _ 
+28/08/2023 19:56:35 - root - INFO - Correct. Letter T is in the word
+28/08/2023 19:56:35 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:35] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:35 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:35] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:37 - root - INFO - True
+28/08/2023 19:56:37 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:37 - root - INFO - Guessed letters are: ['W', 'A', 'T', 'E']
+28/08/2023 19:56:37 - root - INFO - Question are: W A T E _ _ E _ _ _ 
+28/08/2023 19:56:37 - root - INFO - Correct. Letter E is in the word
+28/08/2023 19:56:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:37] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:37 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:37] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:38 - root - INFO - True
+28/08/2023 19:56:38 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:38 - root - INFO - Guessed letters are: ['W', 'A', 'T', 'E', 'R']
+28/08/2023 19:56:38 - root - INFO - Question are: W A T E R _ E _ _ _ 
+28/08/2023 19:56:38 - root - INFO - Correct. Letter R is in the word
+28/08/2023 19:56:38 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:38] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:38 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:38] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:40 - root - INFO - True
+28/08/2023 19:56:40 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:40 - root - INFO - Guessed letters are: ['W', 'A', 'T', 'E', 'R', 'M']
+28/08/2023 19:56:40 - root - INFO - Question are: W A T E R M E _ _ _ 
+28/08/2023 19:56:40 - root - INFO - Correct. Letter M is in the word
+28/08/2023 19:56:40 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:40] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:40 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:40] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:42 - root - INFO - True
+28/08/2023 19:56:42 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:42 - root - INFO - Guessed letters are: ['W', 'A', 'T', 'E', 'R', 'M', 'L']
+28/08/2023 19:56:42 - root - INFO - Question are: W A T E R M E L _ _ 
+28/08/2023 19:56:42 - root - INFO - Correct. Letter L is in the word
+28/08/2023 19:56:42 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:42] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:42 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:42] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:44 - root - INFO - True
+28/08/2023 19:56:44 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:44 - root - INFO - Guessed letters are: ['W', 'A', 'T', 'E', 'R', 'M', 'L', 'O']
+28/08/2023 19:56:44 - root - INFO - Question are: W A T E R M E L O _ 
+28/08/2023 19:56:44 - root - INFO - Correct. Letter O is in the word
+28/08/2023 19:56:44 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:44] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:44 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:44] "[36mGET /static/img/7.jpg HTTP/1.1[0m" 304 -
+28/08/2023 19:56:49 - root - INFO - True
+28/08/2023 19:56:49 - root - INFO - Answer: WATERMELON
+28/08/2023 19:56:49 - root - INFO - Guessed letters are: ['W', 'A', 'T', 'E', 'R', 'M', 'L', 'O', 'N']
+28/08/2023 19:56:49 - root - INFO - Question are: W A T E R M E L O N 
+28/08/2023 19:56:49 - root - INFO - Congratulations! You guessed the word: WATERMELON
+28/08/2023 19:56:49 - root - INFO - reseting game data
+28/08/2023 19:56:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:49] "POST /game HTTP/1.1" 200 -
+28/08/2023 19:56:49 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:49] "GET /static/img/heaven.jpg HTTP/1.1" 200 -
+28/08/2023 19:56:53 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 19:56:53] "GET /statistic HTTP/1.1" 200 -
+28/08/2023 20:04:59 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 20:04:59] "[32mGET /disconnect HTTP/1.1[0m" 302 -
+28/08/2023 20:04:59 - werkzeug - INFO - 127.0.0.1 - - [28/Aug/2023 20:04:59] "GET / HTTP/1.1" 200 -
+28/08/2023 20:41:13 - werkzeug - INFO -  * Detected change in '/home/surface6/Desktop/Hangman_baigiamasis/src/hangman/utilities.py', reloading
+28/08/2023 20:41:13 - werkzeug - INFO -  * Restarting with stat
+28/08/2023 20:41:14 - werkzeug - WARNING -  * Debugger is active!
+28/08/2023 20:41:14 - werkzeug - INFO -  * Debugger PIN: 380-891-499
+28/08/2023 20:51:11 - werkzeug - ERROR - 142.93.212.120 - - [28/Aug/2023 20:51:11] code 400, message Bad request version ('À\x14À')
+28/08/2023 20:51:11 - werkzeug - INFO - 142.93.212.120 - - [28/Aug/2023 20:51:11] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03ªFjìxñ2ÙT2\x92Â4\x0f÷\x84?ó\x96ªD2´i\x14mÖ\x08 2Å<\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À[0m" 400 -
+28/08/2023 20:51:11 - werkzeug - ERROR - 142.93.212.120 - - [28/Aug/2023 20:51:11] code 400, message Bad request version ('À\x14À')
+28/08/2023 20:51:11 - werkzeug - INFO - 142.93.212.120 - - [28/Aug/2023 20:51:11] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03õÄ\x94À\x7fa\x9dt¶W¤zÁÃ<ñê\x9a\x07±,åÐ÷ö\x09\x7fïÖ)\x11O\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À[0m" 400 -
+28/08/2023 20:51:11 - werkzeug - INFO - 142.93.212.120 - - [28/Aug/2023 20:51:11] "GET / HTTP/1.1" 200 -
+28/08/2023 20:51:12 - werkzeug - ERROR - 142.93.212.120 - - [28/Aug/2023 20:51:12] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Iì`5©\x82^\\¡íé¬¬ÏãÖîr^\x8bÓcw±§éjúÜJ5!\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+28/08/2023 20:51:12 - werkzeug - INFO - 142.93.212.120 - - [28/Aug/2023 20:51:12] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Iì`5©\x82^\\¡íé¬¬ÏãÖîr^\x8bÓcw±§éjúÜJ5!\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À[0m" 400 -
+28/08/2023 20:51:12 - werkzeug - INFO - 142.93.212.120 - - [28/Aug/2023 20:51:12] "[33mGET /api/islogged HTTP/1.1[0m" 404 -
+28/08/2023 21:16:41 - werkzeug - INFO -  * Detected change in '/home/surface6/Desktop/Hangman_baigiamasis/src/hangman/tests/test_utilities.py', reloading
+28/08/2023 21:16:41 - werkzeug - INFO -  * Restarting with stat
+28/08/2023 21:16:41 - werkzeug - WARNING -  * Debugger is active!
+28/08/2023 21:16:41 - werkzeug - INFO -  * Debugger PIN: 380-891-499

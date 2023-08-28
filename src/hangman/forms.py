@@ -13,12 +13,12 @@ class RegisterForm(FlaskForm):
     verified_password = PasswordField("Repeat password", [EqualTo('password', "The password must match.")])
     submit = SubmitField('Login')
 
-    def validate_name(self, name):
+    def validate_name(self, name: str):
         user = User.query.filter_by(name=name.data).first()
         if user:
             raise ValidationError('This name has been used. Choose another.')
 
-    def validate_email(self, email):
+    def validate_email(self, email: str):
         user = User.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('This email has been used. Choose another.')

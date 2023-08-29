@@ -2,4 +2,4 @@ __pycache__
 *.sqlite
 *.venv
 *.db
-loging_data.log
+*.log

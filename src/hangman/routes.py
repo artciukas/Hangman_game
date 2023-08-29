@@ -13,6 +13,17 @@ from hangman.database_crud import write_defeat_statistics_to_db, write_win_stati
 from hangman.utilities import get_random_word,word_database,display_word,display_all_letters
 
 
+def start_game():
+    random_word = get_random_word(word_database)
+    session['guessed_letters'] = []
+    session['random_word'] = random_word
+    session['unused_letters_list'] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    session['not_correct_answers'] = []
+    session['game_status'] = True
+    logging.info('reseting game data')
+    return redirect(url_for('game_route'))
+
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     db.create_all()
@@ -65,9 +76,7 @@ def index():
 
 @app.route("/start")
 def start():
-    start_game()
-    
-    return redirect(url_for('restart'))
+    return render_template("start.html")
 
 
 @app.route("/account", methods=['GET', 'POST'])
@@ -99,17 +108,6 @@ def records():
     return render_template("statistic.html", all_statistic=all_statistic, datetime=datetime, user_wins=user_wins, user_defeat=user_defeat, current_user=current_user)
 
 
-def start_game():
-    random_word = get_random_word(word_database)
-    session['guessed_letters'] = []
-    session['random_word'] = random_word
-    session['unused_letters_list'] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    session['not_correct_answers'] = []
-    session['game_status'] = True
-    logging.info('reseting game data')
-    return redirect(url_for('game_route'))
-
-
 @app.route('/game', methods=['GET', 'POST'])
 @login_required
 def game_route():
@@ -127,18 +125,18 @@ def game_route():
     if request.method == 'GET':
         logging.info(session['game_status'])
         if session['game_status'] == False:
-            redirect(url_for('game_route'))
             start_game()
+            redirect(url_for('game_route'))
         
         game_status = True
         session['game_status'] = game_status
-        redirect(url_for('restart'))
         file = os.path.join(img, f'{lives}.jpg')
         logging.info(f"Answer: {random_word}")
         answer ='Please choice a letter'
         display_unused_letters_list = display_all_letters(unused_letters_list)
         return render_template('game.html', data = file, answer = answer, random_word = random_word, hiden_word = hiden_word, display_unused_letters_list = display_unused_letters_list)
     
+
     # POST LOGIC
     else: 
         #GET INPUT FROM FRONT END
@@ -178,8 +176,8 @@ def game_route():
                     flash(f"Statistics updated", 'success')
                     game_status = False
                     session['game_status'] = game_status
-                    redirect(url_for('game_route'))
                     start_game()
+                    redirect(url_for('game_route'))
                     return render_template('win.html', data = file, answer = answer)
                 
 
@@ -215,14 +213,17 @@ def game_route():
                 logging.info('Please enter single letter!')
                 display_unused_letters_list = display_all_letters(unused_letters_list)
                 return render_template('game.html', data = file, random_word = random_word, hiden_word = hiden_word, answer = answer, display_unused_letters_list = display_unused_letters_list)
+    
+    
+    # IF USER DEFEAT
         else:
             file = os.path.join(img, '0.jpg')
             logging.info("Game Over. Try again.")
             write_defeat_statistics_to_db()
             game_status = False
             session['game_status'] = game_status
-            redirect(url_for('game_route'))
             start_game()
+            redirect(url_for('game_route'))
             logging.info(session['game_status'])
             flash(f"Statistics updated", 'success')
             return render_template('defeat.html', data = file, answer = "Game Over. Try again.", random_word = random_word)
@@ -232,6 +233,7 @@ def game_route():
 def restart():
     start_game()
     return redirect(url_for('game_route'))
+
 
 @app.route('/give_up')
 def give_up():

@@ -14,14 +14,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'da
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 admin = Admin(app)
 db = SQLAlchemy(app)
-logging.basicConfig(level=logging.INFO,filename='loging_data.log', filemode='a', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%d/%m/%Y %H:%M:%S')
+logging.basicConfig(level=logging.INFO,filename='logging_data.log', filemode='a', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%d/%m/%Y %H:%M:%S')
 
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'prisijungti'
-# login_manager.login_message_category = 'info'
-# login_manager.login_message = 'ka cia issidirbineji'
-# print(f'aaaa{__name__}')
 
 
 from hangman.models import User

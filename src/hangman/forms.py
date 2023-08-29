@@ -36,21 +36,3 @@ class AccountUpdateForm(FlaskForm):
     email = StringField('Email', [DataRequired()])
     photo = FileField('Update profile picture', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Update')
-
-    # def validate_name(self, name):
-    #     if name.data != app.current_user.name:
-    #         user = app.db.session.query(User).filter_by(name=name.data).first()
-    #         if user:
-    #             raise ValidationError('Šis name panaudotas. Pasirinkite kitą.')
-
-    # def validate_email(self, email):
-    #     if email.data != app.current_user.email:
-    #         user = app.db.session.query(User).filter_by(email=email.data).first()
-    #         if user:
-    #             raise ValidationError('Šis el. pašto adresas panaudotas. Pasirinkite kitą.')
-            
-            
-# class StatisticsForm(FlaskForm):
-#     pajamos = BooleanField('Win')
-#     suma = FloatField('Defeat', [DataRequired()])
-#     submit = SubmitField('Įvesti')

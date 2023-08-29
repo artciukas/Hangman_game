@@ -19,9 +19,7 @@ def start_game():
     session['random_word'] = random_word
     session['unused_letters_list'] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     session['not_correct_answers'] = []
-    session['game_status'] = True
     logging.info('reseting game data')
-    return redirect(url_for('game_route'))
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -123,13 +121,6 @@ def game_route():
 
     # GET LOGIC
     if request.method == 'GET':
-        logging.info(session['game_status'])
-        if session['game_status'] == False:
-            start_game()
-            redirect(url_for('game_route'))
-        
-        game_status = True
-        session['game_status'] = game_status
         file = os.path.join(img, f'{lives}.jpg')
         logging.info(f"Answer: {random_word}")
         answer ='Please choice a letter'
@@ -142,7 +133,6 @@ def game_route():
         #GET INPUT FROM FRONT END
         user_guess = request.form.get('name').upper()
         file = os.path.join(img, f'{lives}.jpg')
-        logging.info(session['game_status'])
         logging.info(f"Answer: {random_word}")
 
 
@@ -174,10 +164,7 @@ def game_route():
                     answer = f"Congratulations! You guessed the word: {random_word}"
                     write_win_statistics_to_db()
                     flash(f"Statistics updated", 'success')
-                    game_status = False
-                    session['game_status'] = game_status
                     start_game()
-                    redirect(url_for('game_route'))
                     return render_template('win.html', data = file, answer = answer)
                 
 
@@ -203,7 +190,6 @@ def game_route():
                     lives = 7 - len(not_correct_answers)
                     file = os.path.join(img, f'{lives}.jpg')
                     logging.info(f"Incorrect letters list: {not_correct_answers}")
-                    redirect(url_for('game_route'))
                     return render_template('game.html', data = file, random_word = random_word, hiden_word = hiden_word, answer = answer, display_unused_letters_list = display_unused_letters_list)
     
 
@@ -220,11 +206,7 @@ def game_route():
             file = os.path.join(img, '0.jpg')
             logging.info("Game Over. Try again.")
             write_defeat_statistics_to_db()
-            game_status = False
-            session['game_status'] = game_status
             start_game()
-            redirect(url_for('game_route'))
-            logging.info(session['game_status'])
             flash(f"Statistics updated", 'success')
             return render_template('defeat.html', data = file, answer = "Game Over. Try again.", random_word = random_word)
     

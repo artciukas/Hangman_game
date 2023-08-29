@@ -6,8 +6,8 @@ from datetime import datetime
 
 def write_defeat_statistics_to_db() -> None:
     db.create_all()                   
-    win = Statistics(wins=False, defeats=True, data = datetime.now(), user_id=current_user.id)
-    db.session.add(win)
+    defeat = Statistics(wins=False, defeats=True, data = datetime.now(), user_id=current_user.id)
+    db.session.add(defeat)
     db.session.commit()
 
 
